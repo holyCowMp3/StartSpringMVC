@@ -18,7 +18,7 @@
     <button formmethod="POST" formaction="showTable"> show table </button>
     <button formmethod="POST" formaction="clear"> clear </button>
 </spring:form>
-<table>
+<table style="width:100%">
     <tr>
         <c:forEach var = "persons" items = "${tableView}">
     <tr>
