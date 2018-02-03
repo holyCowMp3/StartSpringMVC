@@ -10,9 +10,10 @@
 <body>
 <h2>Hello SPRING MVC</h2>
 <h6>simple page with person table</h6>
-<spring:form commandName="person" method="GET">
-    <spring:input path="name"></spring:input>
+<spring:form commandName="LessonEvent" method="GET">
+    <spring:input path=""></spring:input>
     <spring:input path="surname"></spring:input>
+
     <h1>${messege}</h1>
     <button formmethod="POST" formaction="add"> add </button>
     <button formmethod="POST" formaction="showTable"> show table </button>
