@@ -31,6 +31,21 @@ public class MainController {
         modelAndView.addObject("message", "SUCCESS");
         return modelAndView;
     }
+    @RequestMapping(value = "/login", method = {RequestMethod.POST, RequestMethod.GET})
+    public ModelAndView login(ModelAndView modelAndView, @ModelAttribute("person") Person person) {
+        for (Person s:container.getPersonList()) {
+            if ((s.getName().contains(person.getName())&(s.getSurname().contains(person.getSurname())))){
+                modelAndView.setViewName("index");
+                modelAndView.addObject("message", "SUCCESS ! Hello " + person.getName());
+                return modelAndView; }
+            }
+        modelAndView.setViewName("index");
+        modelAndView.addObject("message", "ERROR! Try again");
+        return modelAndView;
+        }
+
+
+
 
     @RequestMapping(value = "/showTable", method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView showTable(ModelAndView modelAndView, @ModelAttribute("person") Person person){
